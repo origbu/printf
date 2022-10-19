@@ -2,7 +2,8 @@
 #include "main.h"
 #include <stdio.h>
 
-int _printf(const char *format, ...){
+int _printf(const char *format, ...)
+{
   int count = 0, i;
   
   va_list data;
@@ -10,7 +11,8 @@ int _printf(const char *format, ...){
 
   /* _printf("%s", 'Hello') */
   
-  for (i = 0; format[i] != '\0'; ){
+  for (i = 0; format[i] != '\0'; )
+  {
     
     /* count the number of characters */
     /* print to the screen each character counted */
@@ -18,8 +20,10 @@ int _printf(const char *format, ...){
       count += _putchar(format[i]);
       i++;
     }
-    else if (format[i] == '%' && format[i+1] !=' '){
-      switch (format[i + 1]){
+    else if (format[i] == '%' && format[i+1] !=' ')
+    {
+      switch (format[i + 1])
+      {
         case 'c':
             /* print the character from the va_arguments */
             count += _putchar(va_arg(data, int));
